@@ -1,0 +1,109 @@
+THIS IS A FIRST LOOK AT THIS IT ISN@T CORRECT OR COMPLETE - JohnP
+
+{
+	"$schema": "http://json-schema.org/schema#",
+	"title": "Guidance Article",
+	"description": "Schema for content and metadata for a guidance article",
+	"type": "object",
+	
+	"properties": {
+		"partial_uri":{
+			"description":"unique id, to be used in url",
+			"type": "string"
+			},
+		"name":{
+			"description": "Article Title for page heading and search results",
+			"type": "String"
+			},
+		"scope":{
+			"description": "Description to be used in search results",
+			"type": "String"
+			},	
+		"major_version"{
+			"description":"major revision number",
+			"type":"integer"  
+			},
+		"minor_version"{
+			"description":"major revision number",
+			"type": "integer"  
+			},
+
+		"author":{
+			"description": " ",
+			"type": "String"
+			},	
+		"owner":{
+			"description": " ",
+			"type": "String"
+			},		
+		"lastUpdate"{
+			"description": " ",
+			"type": "String"
+		}
+		"audiences":{
+			"description": "Description to be used by the search engine",
+			"type": "array",
+			"items":{
+				"type": "string"
+				},
+			"minItems": 0,
+			"uniqueItems": true
+			}		
+		"keywords":{
+			"description": "Description to be used by the search engine",
+			"type": "array",
+			"items":{
+				"type": "string"
+				},
+			"minItems": 0,
+			"uniqueItems": true
+			}
+			
+TODO : work out how to represent facet membership			
+		"keywords":{
+			"description": "Facet categorisation",
+			"type": "array",
+			"facets":{
+				
+				"type": "string"
+				},
+			"minItems": 0,
+			},		
+		"sponsorflag":{
+			"description": " ",
+			"type": "integer"
+			},	
+			
+		"externalLinks":{
+			"description": " ",
+			"type": "array",
+			"items":{
+				"type": "string"
+				},
+			"minItems": 0,
+			"uniqueItems": true
+			}		
+	
+		"internalLinks":{
+			"description": " ",
+			"type": "array",
+			"items":{
+				"type": "string"
+				},
+			"minItems": 0,
+			"uniqueItems": true
+			}
+
+	
+TODO : Work out how to represent article construction from items and snipets or whether this is just embeded in HTML content
+			
+		"content":{
+				"description":"content of the article with HTML markup",
+				"type":"string"
+		}
+
+		
+	"required": ["id", "major_version", "minor_version", "name", "scope"]	
+		
+
+}
